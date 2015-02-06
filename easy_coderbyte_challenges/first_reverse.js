@@ -37,6 +37,7 @@ var reversedString = "";
 
 
 for ( counter; counter > -1; counter -- ) {
+  // # here is where the grabbing of the last char takes place (4, 5) slicing out the last letter and then making it the new reversedString
     reversedString += string.substring(counter-1, counter);
 }
 console.log(reversedString);
