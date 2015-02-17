@@ -9,6 +9,7 @@
 function WordCount(str) {
   str = str.split(" ");
   str = str.length;
+  console.log(str);
   return str;
 }
 WordCount("one 22 three");
