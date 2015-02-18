@@ -17,7 +17,8 @@ function LetterCountI(str) {
   for (var i = 0; i < str.length; i++){
     console.log("This is the first letter we are looking for: " + str[counter]);
     // for (var j = 0; j < str.length; j++){
-      if(str[counter] === str[i]){
+      // if(str[counter] === str[i]){
+      if(str[i] === str[counter]){
         number_of_matches++;
         matches.push(str[i]);
       }
@@ -27,6 +28,6 @@ function LetterCountI(str) {
 console.log("These are our matches in the string: " + matches);
 console.log("This is the number of times we matched: " + matches + " : " + number_of_matches);
 }
-LetterCountI("alligator");
+LetterCountI("alligatorahhhhh");
 
 // Have if the number of matches is 1 then the counter gets incremented and the whole loop run again
