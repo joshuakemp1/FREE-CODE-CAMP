@@ -1,0 +1,17 @@
+Here is all of the easy coder byte challenges I have completed so far =
+
+1 = First Reverse = 
+2 = First Factorial =
+3 = Longest Word
+4 = Letter Changes
+5 = Simple Adding
+6 = Letter Capitalize
+7 = 
+8 = Check Nums
+9 =
+10 =  Vowel Count
+11 =  Word Count
+12 =
+13 =
+14 = off_Line_Minimum =js
+

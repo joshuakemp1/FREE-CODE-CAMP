@@ -9,26 +9,33 @@
 // Input = "4","E","1","E","2","E","3","E" Output = "4,1,2,3"
 
 function OffLineMinimum(strArr) {
+  var result_Array = [];
   var holding_Array = [];
-  var re = /\d/g;
 // loop over the strArr and push the numbers to a holding_Array
 for (var i = 0; i < strArr.length; i++){
   // if you come across an 'E' then go check the holding array
-  if (strArr[i].match(re)) {
-    console.log("number!");
+  if (strArr[i] !== 'E') {
+    // console.log("number!");
     holding_Array.push(strArr[i]);
+    console.log(holding_Array);
+  }
+  else if(strArr[i] === 'E'){
+    // grab the smallest number in the holding array using .shift() and push it to a new array called result_Array
+    var temp = Math.min.apply(Math,holding_Array);
+    result_Array.push(temp);
+    // make sure that the holding_array smallest number was removed
+    holding_Array.sort();
+    holding_Array.shift();
+    // now continue on with looping over the str_Arr and push the numbers to the holding_Array until you find another 'E'
   }
   else{
     console.log("letter!");
   }
 }
-// grab the smallest number in the holding array using .shift() and push it to a new array called result_Array
-// make sure that the holding_array smallest number was removed
-// now continue on with looping over the str_Arr and push the numbers to the holding_Array until you find another 'E'
-// when you find another 'E' go grab the smallest number in the holding_Array and push it to the result_Array
 // Then simply take the result_Array and join it to a string result_Array.join("");
-  console.log(strArr);
-  // return strArr;
+  result_Array = result_Array.join(",");
+  console.log("This is the result_Array in string form: " + result_Array);
   console.log("This is the holding_Array: " + holding_Array);
+  console.log("This is the result_Array: " + result_Array);
 }
-OffLineMinimum(["1","2","E","E","3"]);
+OffLineMinimum(["5","4","6","E","1","7","E","E","3","2"]);//4,1,5
