@@ -1,9 +1,9 @@
-function factorialize(num) {
-  var total = 0;
-  console.log(total = num * 1);
-  console.log(total * num -1);
-
+function FirstFactorial(num) {
+  var total = 1;
+  for (var i = 1; i <= num; i++){
+    total = total * i;
+  }
+  return total;
 }
-factorialize(5);
 
-
+console.log(FirstFactorial(5));

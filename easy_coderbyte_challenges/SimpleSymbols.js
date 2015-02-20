@@ -6,28 +6,30 @@
 // Input = "f++d+"Output = "false"
 
 function SimpleSymbols(str) {
-  var t_or_f = [];
+  var t_or_f = "true";
   var string = "";
   string = str;
   // console.log(string);
-  var re = /\w/g;
   for (var i = 0; i < string.length; i++) {
     console.log(i);
-    if (i >= string.length) {
-      break;
+    if (string[i].match(/[A-Za-z]/g)) {
+      if (i -1 < 0){
+        t_or_f = "false1";
+      }
+      else if (string[i -1] !== "+"){
+        console.log(string[i]);
+        console.log(string[i - 1]);
+        t_or_f = "false2";
+      }
+      else if (i +1 >= str.length){
+        t_or_f = "false3";
+      }
+      else if (string[i + 1] !== "+"){
+          t_or_f = "false4";
+      }
     }
-    if (string[i] === '+') {
-    }
-    if (string[i+1].match(re)) {
-    }
-    if (string[i+2] === '+') {
-      t_or_f.push('true');
-    }
-    // else {
-    //   t_or_f.push('false');
-    // }
   }
 console.log(t_or_f);
   // return str;
 }
-console.log(SimpleSymbols("+d+=3=+s+"));
+SimpleSymbols("f++d+");
