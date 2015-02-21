@@ -6,19 +6,31 @@
 // Input = "never odd or even"Output = "true"
 // Input = "eye"Output = "true"
 
-var _ = require('lodash');
+
+//The below version uses the Javascript library lo_dash.
+// var _ = require('lodash');
+// function Palindrome(str) {
+// var first_Array = [];
+// var second_Array = [];
+// for (var i = 0; i < str.length; i++){
+//   first_Array.push(str[i]);
+//   second_Array.unshift(str[i]);
+// }
+// if (_.isEqual(first_Array,second_Array)) {
+//   return 'true';
+// }
+// else{
+//   return 'false';
+// }
+// }
+// Palindrome("never odd or even");
+
+// The below code solution uses just straight Javscript
+
 function Palindrome(str) {
-var first_Array = [];
-var second_Array = [];
-for (var i = 0; i < str.length; i++){
-  first_Array.push(str[i]);
-  second_Array.unshift(str[i]);
+  return str == str.split("").reverse().join("");
 }
-if (_.isEqual(first_Array,second_Array)) {
-  return 'true';
-}
-else{
-  return 'false';
-}
-}
-Palindrome("never odd or even");
+
+// console.log(Palindrome("bob"));
+// console.log(Palindrome("hello"));
+console.log(Palindrome("never odd or even"));
