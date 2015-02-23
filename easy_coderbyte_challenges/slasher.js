@@ -7,9 +7,14 @@ function slasher(arr, howMany) {
   return new_Array;
 // =======
   // it doesn't allways pay to be first
+<<<<<<< Updated upstream
   // arr.splice(0,howMany);
   // return arr;
 // >>>>>>> Stashed changes
+=======
+  arr.splice(0,howMany);
+  return arr;
+>>>>>>> Stashed changes
 }
 
 console.log(slasher([1, 2, 3], 2));
