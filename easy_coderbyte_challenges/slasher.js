@@ -2,8 +2,14 @@
 
 
 function slasher(arr, howMany) {
+// <<<<<<< Updated upstream
+  var new_Array = arr.splice(howMany);
+  return new_Array;
+// =======
   // it doesn't allways pay to be first
-  return arr;
+  // arr.splice(0,howMany);
+  // return arr;
+// >>>>>>> Stashed changes
 }
 
-slasher([1, 2, 3], 2);
+console.log(slasher([1, 2, 3], 2));
