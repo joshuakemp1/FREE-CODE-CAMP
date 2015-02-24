@@ -9,13 +9,22 @@ function bouncer(arr) {
   // then remove it
   // return the original array after
   var empty_Array = [];
+  var the_Real_Array = [];
   for (var i = 0; i < arr.length; i++){
-    if (arr[i] !== ''){
+    // I would really like to do !== false and if they are false, get rid of them
+    if (arr[i] === '' || arr[i] === false || arr[i] === 0 || arr[i] === undefined ){
       empty_Array.push(arr[i]);
     }
+    else {
+      the_Real_Array.push(arr[i]);
+    }
   }
-  console.log(empty_Array);
-  return arr;
+  if (the_Real_Array[0] === null){
+    return [];
+  }
+  // console.log(the_Real_Array);
+  return the_Real_Array;
 }
 
-bouncer([7, 'ate', '', false, 9]);
+// bouncer([7, 'ate', '', false, 9]);
+console.log(bouncer([false, null, 0]));
