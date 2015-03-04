@@ -10,43 +10,56 @@ var _ = require("underscore");
 
 // var arr = [1,2,3];
 function mutation(arr) {
+  // Both are now lowercase
+  var x = arr[1].toLowerCase();
+  x = x.split("").sort();
+  x = x.join("");
 
-  arr[0] = arr[0].sort();
-  arr[1] = arr[1].sort();
-  console.log(arr[0]);
-  console.log(arr[1]);
-  console.log();
-  console.log();
-//   var final_Array = [];
+  console.log(x);
+  var new_Arr = arr[0].toLowerCase();
+  // console.log(new_Arr);
+  var new_Arr2 = arr[1].toLowerCase();
+  // console.log(new_Arr2);
+  new_Arr = new_Arr.split("").sort();
+  // console.log(new_Arr);
+  new_Arr2 = new_Arr2.split("").sort();
+  // console.log(new_Arr2);
+  // console.log(new_Arr);
+  // console.log(new_Arr2);
+  var first_Array = [];
 //   var new_Arr = arr[0].toLowerCase().split("");
 //   var new_Arr2 = arr[1].toLowerCase().split("");
 //   // _.each(arr){(
 //   // console.log(arr);
 //   // });
-
-//   for (var i = 0; i < new_Arr.length; i++){
-//     for (var j = 0; j < new_Arr2.length; j++){
-//       if (new_Arr[i] === new_Arr2[j]){
-//         new_Arr2.splice(new_Arr2[j],1);
-//         final_Array.push(new_Arr[i]);
-//       }
-//     }
-//   }
-//   final_Array = final_Array.sort().join("").toLowerCase();
-//   // console.log(final_Array);
-//   // arr[1] = arr[1].toLowerCase().join("");
+  for (var i = 0; i < new_Arr.length; i++){
+    for (var j = 0; j < new_Arr2.length; j++){
+      if (new_Arr[i] === new_Arr2[j]){
+        // console.log("This is a match: " + new_Arr[i]);
+        first_Array.push(new_Arr[i]);
+        new_Arr2.splice(new_Arr2[j],1);
+        // console.log("This is the array: " + first_Array);
+      }
+    }
+    // console.log(first_Array);
+  }
+  // console.log(first_Array);
+  final_Array = first_Array.sort().join("");
+  console.log(final_Array);
+  console.log(new_Arr.join(""));
+  console.log(x);
+  // arr[1] = arr[1].join("");
 //   console.log(arr[1]);
-//   // console.log(arr[1].sort().toLowerCase());
-//   if (final_Array === arr[1].toLowerCase()){
-//     return true;
-//   }
-//   else {
-//     return false;
-//   }
-//   console.log(final_Array);
-//   // _.each(arr, function(elem) {
-//   //  console.log(elem);
-//   // });
+// //   // console.log(arr[1].sort().toLowerCase());
+  if (final_Array === x){
+    return true;
+  }
+  else {
+    return false;
+  }
+  // _.each(arr, function(elem) {
+  //  console.log(elem);
+  // });
 
 //   // console.log(new_Arr);
 //   // var x = _.contains(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']);
@@ -57,7 +70,7 @@ function mutation(arr) {
 //   // console.log(arr[0].split(" "));
 //   // return final_Array;
 }
-console.log(mutation(['hello', 'Hello'])); //true
+// console.log(mutation(['hello', 'Hello'])); //true
 // mutation([1,2,3]);
 // console.log(mutation(['hello', 'hey'])); //false
 // console.log(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])); //true
