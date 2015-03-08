@@ -17,9 +17,9 @@
 // var total_Value = 0;
 // return total_Value;
 
-// var _ = require("underscore");
-var R = require('ramda');
+// var u = require("underscore");
 // var fibonacci_List = [0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765,10946,17711,28657,46368,75025,121393,196418,317811,514229,832040,1346269,2178309,3524578,5702887];
+var R = require('ramda');
 
 function sumFibs(num) {
   var fib_Arr = [];
@@ -50,9 +50,8 @@ function sumFibs(num) {
       temp_Arr = temp_Arr[0] + temp_Arr[1];
       fib_Arr.push(temp_Arr);
       total = R.last(fib_Arr);
-      second_total = R.last(fib_Arr);
     }
-    // Generating the fib Array works TO HERE!!!!  WORKS!!
+    // Generating the fib Array works TO HERE!!!!
   }
   // console.log(fib_Arr); // Print out the generated fibonacci array
   // if last Array element is greater than the original in
@@ -61,19 +60,12 @@ function sumFibs(num) {
     console.log("The last element of the array is bigger!");
     fib_Arr.splice(-1,1); // This removes the last item from the array if it is larger than the original num input
   }
-    // console.log(num);
-    // console.log(fib_Arr);
   // This loop removes all of the EVEN fibonacci numbers and leaves all of the ODD numbers
   for (var j = 0; j < fib_Arr.length; j++){
-    // console.log("This is the fib_Arr numbers: " + fib_Arr[j]);
     if (fib_Arr[j] % 2 !== 0){
       new_Arr.push((fib_Arr[j]));
-      // fib_Arr.splice(fib_Arr[j],1);
     }
-    // total = total += fib_Arr[j];
   }
-  // console.log(fib_Arr);
-  // console.log(new_Arr);
   // This checks if the original input num was a
     if (num % 2 !== 0){
     new_Arr.push(num);
@@ -81,30 +73,23 @@ function sumFibs(num) {
     else{
       console.log("The original num was not a Fibonacci number!");
     }
-  console.log(new_Arr);
-  console.log(new_Arr.length);
   // if last Array element is the same as the original input num
     var last = R.last(fib_Arr);
   if (last === num){
     console.log("Removing the last element of the array!");
     new_Arr.splice(-1,1); // This removes the last item from the array if it is the same as the original num input
   }
-  console.log("this is fib num : " + fib_Num);
   // Now to add all of the numbers up :-)
   for (var k = 0; k < new_Arr.length; k++){
-    console.log(fib_Num);
+    console.log("This is fib_Num: " + fib_Num);
+    // console.log(fib_N`);
     fib_Num = fib_Num += new_Arr[k];
   }
-  console.log(fib_Num);
   return fib_Num;
 }
-// console.log(new_Arr);
-
-
-
 // TEST CASES:
 // console.log(sumFibs(75025)); //.to.equal(135721);
-(sumFibs(75024)); //.to.equal(60696);
+console.log(sumFibs(75024)); //.to.equal(60696);
 // console.log(sumFibs(4)); //.to.equal(5);
 // sumFibs(4000000); //.to.equal(4613732);
 // console.log(sumFibs(1000)); //.to.equal(1785);
