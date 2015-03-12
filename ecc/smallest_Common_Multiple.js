@@ -77,21 +77,51 @@ function smallestCommons(arr) {
   for (var i = 1; i <= arr[1]; i++){
     new_Arr.push(i);
   }
-  console.log(new_Arr);
+  // console.log(new_Arr);
 // Infinite loop that simlpy increments higher and higher until the_Bit changes
   for (var j = 1;the_Bit === "false"; j++){
+    for (var k = 0;the_Bit === "false" ; k++){
+      if(j % new_Arr[counter] === 0){
+        console.log(new_Arr[counter]);
+        console.log("counter: " + counter);
+        console.log("j is a MACTCH: " + j);
+        counter++;
+        console.log("counter: " + counter);
+      }
+    }
+  }
+  // return num;
+}
+
+
+smallestCommons([5,1]);
     // console.log(j);
     // if (j % new_Arr[counter] === 0 && j % new_Arr[counter+1] === 0 && j % new_Arr[counter+2] === 0 && j % new_Arr[counter+3] === 0 && j % new_Arr[counter+4] === 0) {
     //   console.log("match! " + j);
     //   num = j;
     //   counter++;
     // }
-    var remainder = j % new_Arr[counter];
+    // var remainder = j % new_Arr[counter];
 
-    if (remainder !== 0){
-      console.log("NO MATCH");
+    // if (remainder !== 0){
+    //   console.log("NO MATCH");
 
-    }
+    // }
+//START OF CODY'S CODE
+//The first place you are stuck you want to change that if statement to another for loop, inside the for loop, I would check for negative values.
+// Something like...
+// if (j % new_Arr[k] !== 0){
+// the_Bit = false;
+// Break;
+// }
+// else {
+// the_Bit = true;
+// }
+//
+//END OF CODY'S CODE
+
+
+
 
     // START OF MARKS CODE
     //
@@ -118,15 +148,10 @@ function smallestCommons(arr) {
     //     }
     //   }
 
-    else if (j === 1000000){
-      the_Bit = "true";
-    }
-  }
-  return num;
-}
+    // else if (j === 1000000){
+    //   the_Bit = "true";
+    // }
 
-
-smallestCommons([5,1]);
 
 
 // TEST CASES:
@@ -134,4 +159,4 @@ smallestCommons([5,1]);
 // (smallestCommons([1,13])).should.equal(360360);
 // expect(smallestCommons([5,1])).to.equal(60);
 // expect(smallestCommons([1,5])).to.equal(60);
-// expect(smallestCommons([1,5])).to.be.a('number');AssertionError:expected [ 1, 5 ] to be a number
+// expect(smallestCommons([1,5])).to.be.a('number');AssertionError:expected [ 1, 5 ] to be a numb
